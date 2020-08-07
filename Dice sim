@@ -1,0 +1,62 @@
+import random
+
+def display_dice(number):
+    dice = [
+        """
+        ┌─────────┐
+        │         │
+        │    •    │
+        │         │
+        └─────────┘
+        """,
+        """
+        ┌─────────┐
+        │    •    │
+        │         │
+        │    •    │
+        └─────────┘
+        """,
+        """
+        ┌─────────┐
+        │      •  │
+        │    •    │
+        │  •      │
+        └─────────┘
+        """,
+        """
+        ┌─────────┐
+        │  •   •  │
+        │         │
+        │  •   •  │
+        └─────────┘
+        """,
+        """
+        ┌─────────┐
+        │  •   •  │
+        │    •    │
+        │  •   •  │
+        └─────────┘
+        """,
+        """
+        ┌─────────┐
+        │  •   •  │
+        │  •   •  │
+        │  •   •  │
+        └─────────┘
+        """,
+        ]
+    return dice[number]
+
+def throw():
+    while True:
+        k = input("Do you wanna throw a dice? y/n ")
+        if(k == "y"):
+            number = random.choice(range(6))
+            print(display_dice(number))
+        elif(k == "n"):
+            print("Ok, i understand ( T ʖ̯ T)")
+            return False
+        else:
+            print("I don't understand :(. Wanna throw a dice?")
+
+throw()
